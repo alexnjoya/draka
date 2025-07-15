@@ -20,16 +20,25 @@ A command-line Python application for managing student results with PostgreSQL d
 ## Installation
 
 1. **Clone or download the project**
-2. **Install dependencies**:
+2. **Create and activate a virtual environment**:
+   ```bash
+   python -m venv venv
+   # On Windows
+   venv\Scripts\activate
+   # On macOS/Linux
+   source venv/bin/activate
+   ```
+
+3. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Set up PostgreSQL database**:
+4. **Set up PostgreSQL database**:
    - Create a database named `student_results_db`
    - Update database credentials in `config/settings.py`
 
-4. **Configure database settings**:
+5. **Configure database settings**:
    Edit `config/settings.py` with your database credentials:
    ```python
    DB_CONFIG = {
@@ -92,38 +101,9 @@ CREATE TABLE student_results (
 );
 ```
 
-## Project Structure
-
-```
-student_result_management/
-├── main.py                 # Main application entry point
-├── database/
-│   ├── connection.py       # Database connection management
-│   └── operations.py       # Database CRUD operations
-├── utils/
-│   ├── file_handler.py     # File reading and writing
-│   └── grade_calculator.py # Grade calculation logic
-├── config/
-│   └── settings.py         # Database configuration
-├── data/
-│   ├── sample_students.csv # Sample data file
-│   └── reports/            # Generated reports directory
-├── requirements.txt        # Dependencies
-└── README.md              # This file
-```
-
 ## Sample Data
 
-The application includes sample student data for testing. Use menu option 5 → 3 to create the sample data file, then option 5 → 1 to load it.
 
-## Error Handling
-
-The application includes comprehensive error handling for:
-- Database connection failures
-- Invalid file formats
-- Duplicate student records
-- Invalid score inputs
-- File I/O errors
 
 ## Example Usage
 
@@ -131,31 +111,3 @@ The application includes comprehensive error handling for:
 2. **View Records**: Check all loaded students
 3. **Update Score**: Modify a student's score
 4. **Generate Report**: Export summary to file
-
-## Troubleshooting
-
-### Database Connection Issues
-- Ensure PostgreSQL is running
-- Verify database credentials in `config/settings.py`
-- Check if database `student_results_db` exists
-
-### File Import Issues
-- Verify file format (CSV with headers or comma-separated TXT)
-- Check file path and permissions
-- Ensure data follows the required format
-
-### Permission Issues
-- Ensure write permissions for `data/reports/` directory
-- Check PostgreSQL user permissions
-
-## Development Notes
-
-- Built with raw Python (no frameworks)
-- Uses psycopg2 for PostgreSQL connectivity
-- Modular design with separate utility functions
-- Comprehensive input validation
-- Clean CLI interface with user-friendly messages
-
-## Contributing
-
-Feel free to submit issues and enhancement requests!
