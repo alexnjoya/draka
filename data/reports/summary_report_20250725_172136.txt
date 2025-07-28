@@ -1,0 +1,13 @@
+Summary Report
+==============
+
+Total Students: 18
+
+Grade Distribution:
+A: 10
+B: 5
+C: 1
+D: 1
+F: 1
+
+Report generated on: 2025-07-25 17:21:36

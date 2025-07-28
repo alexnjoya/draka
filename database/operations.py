@@ -73,3 +73,8 @@ class StudentResultsDB:
         """Clear all student records (for testing purposes)"""
         query = "DELETE FROM student_results"
         return self.db.execute_update(query)
+
+    def delete_student(self, index_number):
+        """Delete a student by index number"""
+        query = "DELETE FROM student_results WHERE index_number = %s"
+        return self.db.execute_update(query, (index_number,))

@@ -203,7 +203,7 @@ def load_data_from_file(db):
         try:
             # Check if student already exists
             if db.student_exists(student['index_number']):
-                print(f"⚠ Student {student['index_number']} already exists. Skipping...")
+                print(f"Student {student['index_number']} already exists. Skipping...")
                 duplicate_count += 1
                 continue
             
